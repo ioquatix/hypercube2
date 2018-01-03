@@ -2,6 +2,8 @@
 
 This printer is based on the Hypercube and Hypercube Evolved printer designs, but re-implemented entirely using OpenSCAD so that it is fully parametric and easy to extend/modify.
 
+![3D render of printer](printer.png)
+
 ## Motivation
 
 I was planning to build the Hypercube Evolved, but received the advice: "Use the designs as inspiration for your own." Thus, was born the `Hypercube^2`. I encourage you to fork it yourself.
