@@ -1,5 +1,7 @@
 # Hypercube²
 
+**This design is a work in progress and is not complete. However, I intend to finish this in 2018.**
+
 This printer is based on the Hypercube and Hypercube Evolved printer designs, but re-implemented entirely using OpenSCAD so that it is fully parametric and easy to extend/modify.
 
 ![3D render of printer](printer.png)
