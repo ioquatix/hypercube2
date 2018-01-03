@@ -1,6 +1,6 @@
 
 module stepper_nema17(length = 40, size = 42.3, diameter = 9.5, center=[0.5, 0.5, 0]) {
-	render() translate([size*center[0], size*center[1], length*center[2]]) difference() {
+	color("green") render() translate([size*center[0], size*center[1], length*center[2]]) difference() {
 		union() {
 			translate([-size/2, -size/2, 0]) cube([size, size, length]);
 			cylinder(d=22, h=length+2);
@@ -13,24 +13,21 @@ module stepper_nema17(length = 40, size = 42.3, diameter = 9.5, center=[0.5, 0.5
 	}
 }
 
-module idler_nema17(length = 40, size = 42.3, diameter = 9.5, thickness = 1.5) {
-	render() translate([size/4, size/2, 0]) difference() {
+module idler_nema17(length = 40, size = 42.3, diameter = 9.5, thickness = 1.5, center=[0.5, 0.5, 0]) {
+	render() translate([size*center[0], size*center[1], length*center[2]]) difference() {
 		union() {
+			//translate([-size/2, -size/2, 0]) cube([size, size, length]);
 			cylinder(d=diameter, h=length+24, $fn=32);
-			translate([0, diameter+thickness, 0]) cylinder(d=diameter, h=length+24, $fn=32);
+			translate([-diameter-thickness, 0, 0]) cylinder(d=diameter, h=length+24, $fn=32);
 		}
 	}
 }
 
-module idler_x(length = 40, size = 42.3, diameter = 9.5, thickness = 1.5) {
+module idler_x(length = 40, diameter = 9.5, thickness = 1.5) {
 	offset = diameter+thickness;
 	
-	render() translate([size/2, 0, 0]) difference() {
-		union() {
-			translate([offset, -offset/2, 0]) cylinder(d=diameter, h=length+24, $fn=32);
-			translate([offset, offset/2, 0]) cylinder(d=diameter, h=length+24, $fn=32);
-		}
-	}
+	translate([offset, -20, 0]) cylinder(d=diameter, h=length+24, $fn=32);
+	translate([offset, 20, 0]) cylinder(d=diameter, h=length+24, $fn=32);
 }
 
 module idler_z(length = 40, size = 50, overlap = 20, rod = [8, 500], center=[0.5, 0.5, 0]) {
