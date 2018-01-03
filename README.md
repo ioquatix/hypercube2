@@ -1,4 +1,4 @@
-# Hypercube^2
+# Hypercube²
 
 This printer is based on the Hypercube and Hypercube Evolved printer designs, but re-implemented entirely using OpenSCAD so that it is fully parametric and easy to extend/modify.
 
